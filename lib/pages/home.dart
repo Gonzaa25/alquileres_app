@@ -50,7 +50,9 @@ class _HomePageState extends State<HomePage> {
         },
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () => {},
+        onPressed: () => {
+          //TODO implementar buscador
+        },
         tooltip: 'Increment',
         child: Icon(Icons.search),
       ),

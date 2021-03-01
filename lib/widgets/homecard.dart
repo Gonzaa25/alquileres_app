@@ -8,6 +8,7 @@ class HomeCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    //TODO implementar pagina de detalle
     return Padding(
       padding: const EdgeInsets.only(bottom: 20),
       child: Card(
