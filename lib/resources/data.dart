@@ -1,4 +1,5 @@
 class Casa {
+  String id;
   String propietario;
   int precio;
   String direccion;
@@ -8,7 +9,8 @@ class Casa {
   int pisos;
 
   Casa(
-      {this.propietario,
+      {this.id,
+      this.propietario,
       this.precio,
       this.direccion,
       this.imagen,
@@ -18,6 +20,7 @@ class Casa {
 }
 
 final casas = _casas.map((e) => Casa(
+    id: e['id'],
     propietario: e['dueño'],
     precio: e['precio'],
     direccion: e['direccion'],
@@ -28,6 +31,7 @@ final casas = _casas.map((e) => Casa(
 
 final List<Map<String, Object>> _casas = [
   {
+    'id': '18fe813',
     'dueño': 'Alberto',
     'precio': 28000,
     'direccion': 'Batallan 3057 3ºC , Saenz Peña',
@@ -38,6 +42,7 @@ final List<Map<String, Object>> _casas = [
     'pisos': 2
   },
   {
+    'id': 'f8yvfy3',
     'dueño': 'Lucia',
     'precio': 25000,
     'direccion': 'Batallan 321 4ºC , Saenz Peña',
@@ -48,6 +53,7 @@ final List<Map<String, Object>> _casas = [
     'pisos': 2
   },
   {
+    'id': '7vjfg7a',
     'dueño': 'Juan',
     'precio': 19000,
     'direccion': 'Batallan 5800 , Saenz Peña',
