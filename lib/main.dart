@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
           primarySwatch: Colors.blue,
           visualDensity: VisualDensity.adaptivePlatformDensity,
         ),
-        home: HomePage(title: 'Alquiler Directo'),
+        home: HomePage(title: 'DEMO APP'),
       ),
     );
   }
