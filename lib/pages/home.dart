@@ -23,7 +23,7 @@ class _HomePageState extends State<HomePage> {
           if (constraints.maxWidth < 600) {
             //LIST VIEW
             return ListView(
-              itemExtent: 320,
+              itemExtent: 330,
               padding: EdgeInsets.all(10),
               children: [
                 for (var casa in casas)
