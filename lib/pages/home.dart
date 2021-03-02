@@ -1,3 +1,4 @@
+import 'package:alquileres_app/pages/favourites.dart';
 import 'package:alquileres_app/resources/data.dart';
 import 'package:alquileres_app/widgets/homecard.dart';
 import 'package:flutter/material.dart';
@@ -17,6 +18,32 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
+      ),
+      drawer: Drawer(
+        child: Column(
+          children: [
+            UserAccountsDrawerHeader(
+                currentAccountPicture: CircleAvatar(
+                  backgroundImage: NetworkImage(
+                      'https://electronicssoftware.net/wp-content/uploads/user.png'),
+                ),
+                accountName: Text('Gonzalo'),
+                accountEmail: Text('gonzalo.gauto@gmail.com')),
+            ListTile(
+              leading: Icon(Icons.home),
+              title: Text('Inicio'),
+              onTap: () => Navigator.pop(context),
+            ),
+            ListTile(
+                leading: Icon(Icons.favorite),
+                title: Text('Favoritos'),
+                onTap: () {
+                  Navigator.pop(context);
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => FavouritePage()));
+                })
+          ],
+        ),
       ),
       body: LayoutBuilder(
         builder: (context, constraints) {
