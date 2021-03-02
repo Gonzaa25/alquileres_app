@@ -1,6 +1,7 @@
 import 'package:alquileres_app/resources/data.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class HomeCard extends StatelessWidget {
   final Casa datos;
@@ -44,12 +45,12 @@ class HomeCard extends StatelessWidget {
                 children: [
                   ListTile(
                       trailing: Text('Disponible',
-                          style: TextStyle(
+                          style: GoogleFonts.oswald(
                               color: Colors.green,
                               fontSize: 17,
                               fontWeight: FontWeight.bold)),
                       title: Text(datos.propietario,
-                          style: TextStyle(
+                          style: GoogleFonts.oswald(
                               color: Colors.grey,
                               fontSize: 18,
                               fontWeight: FontWeight.bold)),
@@ -57,14 +58,14 @@ class HomeCard extends StatelessWidget {
                           text: TextSpan(children: [
                         TextSpan(
                             text: '\$${datos.precio}\n',
-                            style: TextStyle(
+                            style: GoogleFonts.notoSerif(
                                 color: Colors.black,
                                 fontSize: 28,
                                 fontWeight: FontWeight.bold)),
                         TextSpan(
                             text: datos.direccion,
-                            style:
-                                TextStyle(color: Colors.black, fontSize: 18)),
+                            style: GoogleFonts.oswald(
+                                color: Colors.black, fontSize: 18)),
                       ])),
                       isThreeLine: true)
                 ],
