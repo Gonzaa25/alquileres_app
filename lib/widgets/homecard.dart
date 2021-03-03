@@ -98,12 +98,12 @@ class _HomeCardState extends State<HomeCard> {
                             text: '\$${widget.datos.precio}\n',
                             style: GoogleFonts.notoSerif(
                                 color: Colors.black,
-                                fontSize: 28,
+                                fontSize: 24,
                                 fontWeight: FontWeight.bold)),
                         TextSpan(
                             text: widget.datos.direccion,
                             style: GoogleFonts.oswald(
-                                color: Colors.black, fontSize: 18)),
+                                color: Colors.black, fontSize: 13)),
                       ])),
                       isThreeLine: true)
                 ],
