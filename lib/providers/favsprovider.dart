@@ -8,13 +8,11 @@ class FavsProvider with ChangeNotifier, DiagnosticableTreeMixin {
 
   void addFav(Casa casa) {
     _myfavs.add(casa);
-    print(_myfavs.toString());
     notifyListeners();
   }
 
   void removeFav(Casa casa) {
     _myfavs.remove(casa);
-    print(_myfavs.toString());
     notifyListeners();
   }
 }
