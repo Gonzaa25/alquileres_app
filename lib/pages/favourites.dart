@@ -3,16 +3,7 @@ import 'package:alquileres_app/widgets/homecard.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-class FavouritePage extends StatefulWidget {
-  FavouritePage({Key key, this.title}) : super(key: key);
-
-  final String title;
-
-  @override
-  _FavouritePageState createState() => _FavouritePageState();
-}
-
-class _FavouritePageState extends State<FavouritePage> {
+class FavouritePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final casas = context.watch<FavsProvider>().myfavs;

@@ -5,14 +5,10 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
-class HomeCard extends StatefulWidget {
+class HomeCard extends StatelessWidget {
   final Casa datos;
   HomeCard({this.datos});
-  @override
-  _HomeCardState createState() => _HomeCardState();
-}
 
-class _HomeCardState extends State<HomeCard> {
   @override
   Widget build(BuildContext context) {
     //TODO implementar pagina de detalle
@@ -33,7 +29,7 @@ class _HomeCardState extends State<HomeCard> {
                   child: Stack(
                     children: [
                       CachedNetworkImage(
-                        imageUrl: widget.datos.imagen,
+                        imageUrl: datos.imagen,
                         imageBuilder: (context, imageProvider) => Container(
                           decoration: BoxDecoration(
                             image: DecorationImage(
@@ -51,7 +47,7 @@ class _HomeCardState extends State<HomeCard> {
                         child: Align(
                           alignment: Alignment.topRight,
                           child: IconButton(
-                              icon: myfavs.contains(widget.datos)
+                              icon: myfavs.contains(datos)
                                   ? Icon(
                                       Icons.favorite,
                                       color: Colors.white,
@@ -61,14 +57,10 @@ class _HomeCardState extends State<HomeCard> {
                                       color: Colors.white,
                                     ),
                               onPressed: () {
-                                if (myfavs.contains(widget.datos)) {
-                                  context
-                                      .read<FavsProvider>()
-                                      .removeFav(widget.datos);
+                                if (myfavs.contains(datos)) {
+                                  context.read<FavsProvider>().removeFav(datos);
                                 } else {
-                                  context
-                                      .read<FavsProvider>()
-                                      .addFav(widget.datos);
+                                  context.read<FavsProvider>().addFav(datos);
                                 }
                               }),
                         ),
@@ -87,7 +79,7 @@ class _HomeCardState extends State<HomeCard> {
                               color: Colors.green,
                               fontSize: 17,
                               fontWeight: FontWeight.bold)),
-                      title: Text(widget.datos.propietario,
+                      title: Text(datos.propietario,
                           style: GoogleFonts.oswald(
                               color: Colors.grey,
                               fontSize: 18,
@@ -95,13 +87,13 @@ class _HomeCardState extends State<HomeCard> {
                       subtitle: RichText(
                           text: TextSpan(children: [
                         TextSpan(
-                            text: '\$${widget.datos.precio}\n',
+                            text: '\$${datos.precio}\n',
                             style: GoogleFonts.notoSerif(
                                 color: Colors.black,
                                 fontSize: 24,
                                 fontWeight: FontWeight.bold)),
                         TextSpan(
-                            text: widget.datos.direccion,
+                            text: datos.direccion,
                             style: GoogleFonts.oswald(
                                 color: Colors.black, fontSize: 13)),
                       ])),
@@ -119,7 +111,7 @@ class _HomeCardState extends State<HomeCard> {
                       Row(
                         children: [
                           Icon(Icons.king_bed_outlined),
-                          Text('${widget.datos.ambientes}')
+                          Text('${datos.ambientes}')
                         ],
                       ),
                       Text('Ambientes')
@@ -130,7 +122,7 @@ class _HomeCardState extends State<HomeCard> {
                       Row(
                         children: [
                           Icon(Icons.bathtub_outlined),
-                          Text('${widget.datos.banos}')
+                          Text('${datos.banos}')
                         ],
                       ),
                       Text('Baños')
@@ -141,7 +133,7 @@ class _HomeCardState extends State<HomeCard> {
                       Row(
                         children: [
                           Icon(Icons.stairs_outlined),
-                          Text('${widget.datos.pisos}')
+                          Text('${datos.pisos}')
                         ],
                       ),
                       Text('Pisos')
