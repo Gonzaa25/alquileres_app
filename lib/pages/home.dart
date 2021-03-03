@@ -62,11 +62,11 @@ class _HomePageState extends State<HomePage> {
           } else {
             //GRID VIEW
             return GridView(
-                padding: EdgeInsets.all(10),
+                padding: EdgeInsets.all(5),
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 2,
-                    crossAxisSpacing: 20,
-                    mainAxisSpacing: 20),
+                    crossAxisCount: constraints.maxWidth > 900 ? 3 : 2,
+                    crossAxisSpacing: 10,
+                    mainAxisSpacing: 10),
                 children: [
                   for (var casa in casas)
                     HomeCard(
