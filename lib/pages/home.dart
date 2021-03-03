@@ -80,7 +80,7 @@ class _HomePageState extends State<HomePage> {
         onPressed: () => {
           //TODO implementar buscador
         },
-        tooltip: 'Increment',
+        tooltip: 'Buscar',
         child: Icon(Icons.search),
       ),
     );
