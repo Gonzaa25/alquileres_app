@@ -6,7 +6,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
 class HomeCard extends StatelessWidget {
-  final Casa datos;
+  final Casa? datos;
   HomeCard({this.datos});
 
   @override
@@ -29,7 +29,7 @@ class HomeCard extends StatelessWidget {
                   child: Stack(
                     children: [
                       CachedNetworkImage(
-                        imageUrl: datos.imagen,
+                        imageUrl: datos!.imagen!,
                         imageBuilder: (context, imageProvider) => Container(
                           decoration: BoxDecoration(
                             image: DecorationImage(
@@ -79,7 +79,7 @@ class HomeCard extends StatelessWidget {
                               color: Colors.green,
                               fontSize: 17,
                               fontWeight: FontWeight.bold)),
-                      title: Text(datos.propietario,
+                      title: Text(datos!.propietario!,
                           style: GoogleFonts.oswald(
                               color: Colors.grey,
                               fontSize: 18,
@@ -87,13 +87,13 @@ class HomeCard extends StatelessWidget {
                       subtitle: RichText(
                           text: TextSpan(children: [
                         TextSpan(
-                            text: '\$${datos.precio}\n',
+                            text: '\$${datos!.precio}\n',
                             style: GoogleFonts.notoSerif(
                                 color: Colors.black,
                                 fontSize: 24,
                                 fontWeight: FontWeight.bold)),
                         TextSpan(
-                            text: datos.direccion,
+                            text: datos!.direccion,
                             style: GoogleFonts.oswald(
                                 color: Colors.black, fontSize: 13)),
                       ])),
@@ -111,7 +111,7 @@ class HomeCard extends StatelessWidget {
                       Row(
                         children: [
                           Icon(Icons.king_bed_outlined),
-                          Text('${datos.ambientes}')
+                          Text('${datos!.ambientes}')
                         ],
                       ),
                       Text('Ambientes')
@@ -122,7 +122,7 @@ class HomeCard extends StatelessWidget {
                       Row(
                         children: [
                           Icon(Icons.bathtub_outlined),
-                          Text('${datos.banos}')
+                          Text('${datos!.banos}')
                         ],
                       ),
                       Text('Baños')
@@ -133,7 +133,7 @@ class HomeCard extends StatelessWidget {
                       Row(
                         children: [
                           Icon(Icons.stairs_outlined),
-                          Text('${datos.pisos}')
+                          Text('${datos!.pisos}')
                         ],
                       ),
                       Text('Pisos')

@@ -1,12 +1,12 @@
 class Casa {
-  String id;
-  String propietario;
-  int precio;
-  String direccion;
-  String imagen;
-  int ambientes;
-  int banos;
-  int pisos;
+  String? id;
+  String? propietario;
+  int? precio;
+  String? direccion;
+  String? imagen;
+  int? ambientes;
+  int? banos;
+  int? pisos;
 
   Casa(
       {this.id,
@@ -20,14 +20,14 @@ class Casa {
 }
 
 final casas = _casas.map((e) => Casa(
-    id: e['id'],
-    propietario: e['dueño'],
-    precio: e['precio'],
-    direccion: e['direccion'],
-    imagen: e['imagen'],
-    ambientes: e['ambientes'],
-    banos: e['baños'],
-    pisos: e['pisos']));
+    id: e['id'] as String?,
+    propietario: e['dueño'] as String?,
+    precio: e['precio'] as int?,
+    direccion: e['direccion'] as String?,
+    imagen: e['imagen'] as String?,
+    ambientes: e['ambientes'] as int?,
+    banos: e['baños'] as int?,
+    pisos: e['pisos'] as int?));
 
 final List<Map<String, Object>> _casas = [
   {

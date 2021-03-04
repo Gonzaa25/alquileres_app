@@ -3,15 +3,15 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 class FavsProvider with ChangeNotifier, DiagnosticableTreeMixin {
-  List<Casa> _myfavs = [];
-  List<Casa> get myfavs => _myfavs;
+  List<Casa?> _myfavs = [];
+  List<Casa?> get myfavs => _myfavs;
 
-  void addFav(Casa casa) {
+  void addFav(Casa? casa) {
     _myfavs.add(casa);
     notifyListeners();
   }
 
-  void removeFav(Casa casa) {
+  void removeFav(Casa? casa) {
     _myfavs.remove(casa);
     notifyListeners();
   }
