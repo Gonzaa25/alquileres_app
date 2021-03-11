@@ -64,6 +64,7 @@ class _HomePageState extends State<HomePage> {
             return GridView(
                 padding: EdgeInsets.all(5),
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    mainAxisExtent: 400,
                     crossAxisCount: constraints.maxWidth > 900 ? 3 : 2,
                     crossAxisSpacing: 10,
                     mainAxisSpacing: 10),
