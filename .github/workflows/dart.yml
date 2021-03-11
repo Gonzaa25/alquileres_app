@@ -42,7 +42,6 @@ jobs:
       # Build web.
       - run: flutter build web
       # Deploy to github pages
-      - name: Deploy
       - uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.token }}
