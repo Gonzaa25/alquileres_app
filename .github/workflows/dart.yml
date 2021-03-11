@@ -39,3 +39,11 @@ jobs:
       - run: flutter analyze .
       # Statically analyze the Dart code for any errors.
       - run: flutter test
+      # Build web.
+      - run: flutter build web
+      # Deploy to github pages
+      - name: Deploy
+      - uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.token }}
+          publish_dir: ./build/web
