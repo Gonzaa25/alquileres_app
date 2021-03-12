@@ -40,7 +40,7 @@ jobs:
       # Statically analyze the Dart code for any errors.
       - run: flutter test
       # Build web.
-      - run: flutter build web
+      - run: flutter build web --release
       # Cleaning index.html
       - run: cat index.html
         working-directory: ./build/web
