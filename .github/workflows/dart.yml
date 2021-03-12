@@ -43,11 +43,11 @@ jobs:
       - run: flutter build web
       # Cleaning index.html
       - run: cat index.html
-        working-directory: /home/runner/work/[YOUR_GITHUB_REPO_NAME]/[YOUR_GITHUB_REPO_NAME]/build/web
+        working-directory: ./build/web
       - run: sed -i '/base href/d' index.html #For MacOS : sed -i '' '/base href/d' index.html
-        working-directory: /home/runner/work/[YOUR_GITHUB_REPO_NAME]/[YOUR_GITHUB_REPO_NAME]/build/web
+        working-directory: ./build/web
       - run: cat index.html
-        working-directory: /home/runner/work/[YOUR_GITHUB_REPO_NAME]/[YOUR_GITHUB_REPO_NAME]/build/web
+        working-directory: ./build/web
       # Deploy to github pages
       - uses: peaceiris/actions-gh-pages@v3
         with:
